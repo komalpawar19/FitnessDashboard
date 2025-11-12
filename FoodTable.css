@@ -1,0 +1,184 @@
+.food-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 12px;
+  padding: 12px;
+  background-color: #f5f5f5;
+  border-radius: 8px 8px 0 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #f0f0f0;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 12px;
+  padding: 16px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: #f8f9fa;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.col-food {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+}
+
+.food-emoji {
+  font-size: 16px;
+}
+
+.food-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.col-meal,
+.col-calories,
+.col-time,
+.col-carbs {
+  font-size: 12px;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Responsive: Tablet */
+@media (max-width: 1024px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+
+  .col-time,
+  .col-carbs {
+    display: none;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+  .table-header {
+    display: none;
+  }
+
+  .table-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+
+  .table-row:last-child {
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 0;
+  }
+
+  .table-body {
+    border-top: none;
+    gap: 12px;
+  }
+
+  .col-food,
+  .col-meal,
+  .col-calories,
+  .col-time,
+  .col-carbs {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .col-food::before {
+    content: 'Food: ';
+    font-weight: 600;
+    color: #999;
+  }
+
+  .col-meal::before {
+    content: 'Meal: ';
+    font-weight: 600;
+    color: #999;
+  }
+
+  .col-calories::before {
+    content: 'Calories: ';
+    font-weight: 600;
+    color: #999;
+  }
+
+  .col-time::before {
+    content: 'Time: ';
+    font-weight: 600;
+    color: #999;
+  }
+
+  .col-carbs::before {
+    content: 'Carbs: ';
+    font-weight: 600;
+    color: #999;
+  }
+
+  .col-meal,
+  .col-calories,
+  .col-time,
+  .col-carbs {
+    display: flex;
+  }
+
+  .col-food {
+    display: flex;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-row {
+    padding: 10px;
+  }
+
+  .col-food,
+  .col-meal,
+  .col-calories,
+  .col-time,
+  .col-carbs {
+    font-size: 11px;
+  }
+
+  .food-emoji {
+    font-size: 14px;
+  }
+}
